@@ -12,12 +12,15 @@ import java.util.*;
 
 public class ContainsDuplicate {
     public static boolean hasDuplicate(int[] nums) {
-//        Set<Integer> set = new HashSet<>();
-//        for (int i : nums) {
-//            if(set.contains(i)) return true;
-//            else set.add(i);
-//        }
-//        return false;
+        Set<Integer> set = new HashSet<>();
+        for (int i : nums) {
+            if(set.contains(i)) return true;
+            else set.add(i);
+        }
+        return false;
+
+    }
+    public static boolean hasDuplicateWithStream(int[] nums) {
 
         return Arrays.stream(nums).distinct().count() < nums.length;
     }
